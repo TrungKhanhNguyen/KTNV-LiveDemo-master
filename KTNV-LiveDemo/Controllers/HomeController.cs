@@ -13,27 +13,20 @@ namespace KTNV_LiveDemo.Controllers
     {
         private string default_image = "/images/200x200.png";
         private string default_filefolder = "/Content/files/";
+        private string default_imagefolder = "/Content/anh/";
         public ActionResult Index()
         {
             try
             {
-                string[] lines = System.IO.File.ReadAllLines(Server.MapPath("~/Content/danhsachfiledinhkem.txt"));
-                var listFile = new List<ThumbnailFile>();
-                if (lines != null && lines.Length > 0)
+                var listFileName = new DirectoryInfo(Server.MapPath(default_filefolder)).GetFiles().Select(o => o.Name).ToList();
+                //string[] lines = System.IO.File.ReadAllLines(Server.MapPath("~/Content/danhsachfiledinhkem.txt"));
+                var listFile = new List<string>();
+                if (listFileName != null && listFileName.Count > 0)
                 {
-                    foreach (string line in lines)
+                    foreach (string line in listFileName)
                     {
-                        string[] subs = line.Split(';');
-                        if (subs != null && subs.Length > 1)
-                        {
-                            var file = new ThumbnailFile
-                            {
-                                FileName = subs[0],
-                                Url = subs[1],
-                                FileDescription = subs[2],
-                            };
-                            listFile.Add(file);
-                        }
+                        var f = default_filefolder + line;
+                        listFile.Add(f);
                         // Use a tab to indent each line of the file.
 
                     }
@@ -46,12 +39,13 @@ namespace KTNV_LiveDemo.Controllers
                     foreach (string line in lineAttend)
                     {
                         string[] subs = line.Split(';');
-                        if (subs != null && subs.Length > 1)
+                        if (subs != null && subs.Length > 2)
                         {
                             var file = new Attend
                             {
                                 AttendName = subs[0],
-                                Ranking = String.IsNullOrEmpty(subs[1]) ? "..." : subs[1]
+                                Ranking = String.IsNullOrEmpty(subs[1]) ? "..." : subs[1],
+                                AttendImage = String.IsNullOrEmpty(subs[2]) ? default_image : subs[2]
                             };
                             listAttend.Add(file);
                         }
@@ -70,13 +64,15 @@ namespace KTNV_LiveDemo.Controllers
                 if (host != null && host.Length > 0)
                 {
                     var listTT = host.Split(';');
-                    if (listTT != null && listTT.Count() >0)
+                    if (listTT != null && listTT.Count() >1)
                     {
                         var nguoichutri = listTT[0];
                         var chucvu = listTT[1];
+                        var anh = listTT[2];
                         ViewBag.Nguoichutri = nguoichutri;
                         ViewBag.Chucvuchutri = String.IsNullOrEmpty(chucvu) ? "..." : chucvu;
-                        
+                        ViewBag.Anhnguoichutri = String.IsNullOrEmpty(anh) ? default_image : anh;
+
                     }
 
                 }
@@ -149,30 +145,30 @@ namespace KTNV_LiveDemo.Controllers
             if (chutriText !=null && chutriText.Length > 0)
             {
                 string[] subChutri = chutriText.Split(';');
-                if (subChutri != null && subChutri.Length > 1)
+                if (subChutri != null && subChutri.Length > 2)
                 {
                     chutri.AttendName = subChutri[0];
                     chutri.Ranking = subChutri[1];
-        
+                    chutri.AttendImage = String.IsNullOrEmpty(subChutri[2]) ? default_image : subChutri[2];
                 }
             }
             
 
             string[] lineAttend = System.IO.File.ReadAllLines(Server.MapPath("~/Content/danhsachthamdu.txt"));
             var listAttend = new List<Attend>();
-            string att1, att2, att3, att4, att5, att6, att7, att8,
-                att9, att10, att11, att12, att13, att14, att15;
+           
             if (lineAttend != null && lineAttend.Length > 0)
             {
                 foreach (string line in lineAttend)
                 {
                     string[] subs = line.Split(';');
-                    if (subs != null && subs.Length > 1)
+                    if (subs != null && subs.Length > 2)
                     {
                         var file = new Attend
                         {
                             AttendName = subs[0],
-                            Ranking = subs[1]
+                            Ranking = subs[1],
+                            AttendImage = String.IsNullOrEmpty(subs[2]) ? default_image : subs[2]
                         };
                         listAttend.Add(file);
                     }
@@ -183,21 +179,7 @@ namespace KTNV_LiveDemo.Controllers
                     listAttend.Add(new Attend { AttendName = "", AttendImage = "" });
                 }
             }
-            //att1 = listAttend[0].AttendName;
-            //att2 = listAttend[1].AttendName;
-            //att3 = listAttend[2].AttendName;
-            //att4 = listAttend[3].AttendName;
-            //att5 = listAttend[4].AttendName;
-            //att6 = listAttend[5].AttendName; 
-            //att7 = listAttend[6].AttendName;
-            //att8 = listAttend[7].AttendName;
-            //att9 = listAttend[8].AttendName;
-            //att10 = listAttend[9].AttendName;
-            //att11 = listAttend[10].AttendName;
-            //att12 = listAttend[11].AttendName;
-            //att13 = listAttend[12].AttendName;
-            //att14 = listAttend[13].AttendName;
-            //att15 = listAttend[14].AttendName;
+            //ViewBag.ListImage = getListImage();
             var attends = new Attends {
                  host = chutri,
                  attend1 = listAttend[0],
@@ -215,6 +197,7 @@ namespace KTNV_LiveDemo.Controllers
                 attend13 = listAttend[12],
                 attend14 = listAttend[13],
                 attend15 = listAttend[14],
+                listImage = getListImage()
             };
            
             ViewBag.ShowSuccess = "";
@@ -230,36 +213,42 @@ namespace KTNV_LiveDemo.Controllers
             {
                 var pathChutri = Server.MapPath("~/Content/chutri.txt");
                 var pathThamdu = Server.MapPath("~/Content/danhsachthamdu.txt");
-                System.IO.File.WriteAllText(pathChutri, attends.host.AttendName + ";" + attends.host.Ranking);
+                System.IO.File.WriteAllText(pathChutri, attends.host.AttendName + ";" + attends.host.Ranking + ";" + default_imagefolder + attends.host.AttendImage);
                 StringBuilder sb = new StringBuilder();
-                sb.Append(attends.attend1.AttendName + ";" + attends.attend1.Ranking); sb.AppendLine();
-                sb.Append(attends.attend2.AttendName + ";" + attends.attend2.Ranking); sb.AppendLine();
-                sb.Append(attends.attend3.AttendName + ";" + attends.attend3.Ranking); sb.AppendLine();
-                sb.Append(attends.attend4.AttendName + ";" + attends.attend4.Ranking); sb.AppendLine();
-                sb.Append(attends.attend5.AttendName + ";" + attends.attend5.Ranking); sb.AppendLine();
-                sb.Append(attends.attend6.AttendName + ";" + attends.attend6.Ranking); sb.AppendLine();
-                sb.Append(attends.attend7.AttendName + ";" + attends.attend7.Ranking); sb.AppendLine();
-                sb.Append(attends.attend8.AttendName + ";" + attends.attend8.Ranking); sb.AppendLine();
-                sb.Append(attends.attend9.AttendName + ";" + attends.attend9.Ranking); sb.AppendLine();
-                sb.Append(attends.attend10.AttendName + ";" + attends.attend10.Ranking); sb.AppendLine();
-                sb.Append(attends.attend11.AttendName + ";" + attends.attend11.Ranking); sb.AppendLine();
-                sb.Append(attends.attend12.AttendName + ";" + attends.attend12.Ranking); sb.AppendLine();
-                sb.Append(attends.attend13.AttendName + ";" + attends.attend13.Ranking); sb.AppendLine();
-                sb.Append(attends.attend14.AttendName + ";" + attends.attend14.Ranking); sb.AppendLine();
-                sb.Append(attends.attend15.AttendName + ";" + attends.attend15.Ranking); sb.AppendLine();
+                sb.Append(attends.attend1.AttendName + ";" + attends.attend1.Ranking + ";" + default_imagefolder + attends.attend1.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend2.AttendName + ";" + attends.attend2.Ranking + ";" + default_imagefolder + attends.attend2.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend3.AttendName + ";" + attends.attend3.Ranking + ";" + default_imagefolder + attends.attend3.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend4.AttendName + ";" + attends.attend4.Ranking + ";" + default_imagefolder + attends.attend4.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend5.AttendName + ";" + attends.attend5.Ranking + ";" + default_imagefolder + attends.attend5.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend6.AttendName + ";" + attends.attend6.Ranking + ";" + default_imagefolder + attends.attend6.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend7.AttendName + ";" + attends.attend7.Ranking + ";" + default_imagefolder + attends.attend7.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend8.AttendName + ";" + attends.attend8.Ranking + ";" + default_imagefolder + attends.attend8.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend9.AttendName + ";" + attends.attend9.Ranking + ";" + default_imagefolder + attends.attend9.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend10.AttendName + ";" + attends.attend10.Ranking + ";" + default_imagefolder + attends.attend10.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend11.AttendName + ";" + attends.attend11.Ranking + ";" + default_imagefolder + attends.attend11.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend12.AttendName + ";" + attends.attend12.Ranking + ";" + default_imagefolder + attends.attend12.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend13.AttendName + ";" + attends.attend13.Ranking + ";" + default_imagefolder + attends.attend13.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend14.AttendName + ";" + attends.attend14.Ranking + ";" + default_imagefolder + attends.attend14.AttendImage); sb.AppendLine();
+                sb.Append(attends.attend15.AttendName + ";" + attends.attend15.Ranking + ";" + default_imagefolder + attends.attend15.AttendImage); sb.AppendLine();
                 System.IO.File.WriteAllText(pathThamdu, sb.ToString());
                 ViewBag.ShowSuccess = "true";
-                return View();
+                return RedirectToAction("Attend");
             }
             catch
             {
                 ViewBag.ShowSuccess = "false";
-                return View();
+                return RedirectToAction("Attend");
             }
             
         }
         #endregion
-
+        private List<SelectListItem> getListImage()
+        {
+            var listFileName = new DirectoryInfo(Server.MapPath(default_imagefolder)).GetFiles().Select(o => o.Name).ToList();
+            var ts = listFileName.Select(x => new SelectListItem { Text = x, Value = x })
+             .ToList();
+            return ts;
+        }
 
         private List<SelectListItem> getList()
         {

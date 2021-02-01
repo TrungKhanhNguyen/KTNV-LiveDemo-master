@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace KTNV_LiveDemo.Models
 {
@@ -23,5 +24,6 @@ namespace KTNV_LiveDemo.Models
         public Attend attend14 { get; set; }
         public Attend attend15 { get; set; }
         public Attend host { get; set; }
+        public List<SelectListItem> listImage { get; set; }
     }
 }

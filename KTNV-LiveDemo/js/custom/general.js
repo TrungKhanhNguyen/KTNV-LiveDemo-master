@@ -12,28 +12,70 @@
 jQuery.noConflict();
 
 jQuery(document).ready(function(){
-	var default_filefolder = '~/Content/files/';					
+	//var default_filefolder = '~/Content/files/';					
 	
-		var v1 = jQuery('.file1_Url').val();
+	//	var v1 = jQuery('.file1_Url').val();
 	
-		var v2 = jQuery('.file2_Url').val();
-	var v3 = jQuery('.file3_Url').val();
-	var v4 = jQuery('.file4_Url').val();
-	var v5 = jQuery('.file5_Url').val();
-	var v6 = jQuery('.file6_Url').val();
-	var v7 = jQuery('.file7_Url').val();
-	var v8 = jQuery('.file8_Url').val();
-	var v9 = jQuery('.file9_Url').val();
+	//	var v2 = jQuery('.file2_Url').val();
+	//var v3 = jQuery('.file3_Url').val();
+	//var v4 = jQuery('.file4_Url').val();
+	//var v5 = jQuery('.file5_Url').val();
+	//var v6 = jQuery('.file6_Url').val();
+	//var v7 = jQuery('.file7_Url').val();
+	//var v8 = jQuery('.file8_Url').val();
+	//var v9 = jQuery('.file9_Url').val();
 	
-	jQuery("#file1_Url").val(v1.replace(default_filefolder,''));
-	jQuery("#file2_Url").val(v2.replace(default_filefolder, ''));
-	jQuery("#file3_Url").val(v3.replace(default_filefolder, ''));
-	jQuery("#file4_Url").val(v4.replace(default_filefolder, ''));
-	jQuery("#file5_Url").val(v5.replace(default_filefolder, ''));
-	jQuery("#file6_Url").val(v6.replace(default_filefolder, ''));
-	jQuery("#file7_Url").val(v7.replace(default_filefolder, ''));
-	jQuery("#file8_Url").val(v8.replace(default_filefolder, ''));
-	jQuery("#file9_Url").val(v9.replace(default_filefolder, ''));
+	//jQuery("#file1_Url").val(v1.replace(default_filefolder,''));
+	//jQuery("#file2_Url").val(v2.replace(default_filefolder, ''));
+	//jQuery("#file3_Url").val(v3.replace(default_filefolder, ''));
+	//jQuery("#file4_Url").val(v4.replace(default_filefolder, ''));
+	//jQuery("#file5_Url").val(v5.replace(default_filefolder, ''));
+	//jQuery("#file6_Url").val(v6.replace(default_filefolder, ''));
+	//jQuery("#file7_Url").val(v7.replace(default_filefolder, ''));
+	//jQuery("#file8_Url").val(v8.replace(default_filefolder, ''));
+	//jQuery("#file9_Url").val(v9.replace(default_filefolder, ''));
+
+
+
+
+	var default_imagefolder = '/Content/anh/';
+	
+	var v0 = jQuery('.host_AttendImage').val();
+	
+	var v1 = jQuery('.attend1_AttendImage').val();
+	var v2 = jQuery('.attend2_AttendImage').val();
+	var v3 = jQuery('.attend3_AttendImage').val();
+	var v4 = jQuery('.attend4_AttendImage').val();
+	var v5 = jQuery('.attend5_AttendImage').val();
+	var v6 = jQuery('.attend6_AttendImage').val();
+	var v7 = jQuery('.attend7_AttendImage').val();
+	var v8 = jQuery('.attend8_AttendImage').val();
+	var v9 = jQuery('.attend9_AttendImage').val();
+	var v10 = jQuery('.attend10_AttendImage').val();
+	var v11 = jQuery('.attend11_AttendImage').val();
+	var v12 = jQuery('.attend12_AttendImage').val();
+	var v13 = jQuery('.attend13_AttendImage').val();
+	var v14 = jQuery('.attend14_AttendImage').val();
+	var v15 = jQuery('.attend15_AttendImage').val();
+
+	
+
+	jQuery("#host_AttendImage").val(v0.replace(default_imagefolder, ''));
+	jQuery("#attend1_AttendImage").val(v1.replace(default_imagefolder, ''));
+	jQuery("#attend2_AttendImage").val(v2.replace(default_imagefolder, ''));
+	jQuery("#attend3_AttendImage").val(v3.replace(default_imagefolder, ''));
+	jQuery("#attend4_AttendImage").val(v4.replace(default_imagefolder, ''));
+	jQuery("#attend5_AttendImage").val(v5.replace(default_imagefolder, ''));
+	jQuery("#attend6_AttendImage").val(v6.replace(default_imagefolder, ''));
+	jQuery("#attend7_AttendImage").val(v7.replace(default_imagefolder, ''));
+	jQuery("#attend8_AttendImage").val(v8.replace(default_imagefolder, ''));
+	jQuery("#attend9_AttendImage").val(v9.replace(default_imagefolder, ''));
+	jQuery("#attend10_AttendImage").val(v10.replace(default_imagefolder, ''));
+	jQuery("#attend11_AttendImage").val(v11.replace(default_imagefolder, ''));
+	jQuery("#attend12_AttendImage").val(v12.replace(default_imagefolder, ''));
+	jQuery("#attend13_AttendImage").val(v13.replace(default_imagefolder, ''));
+	jQuery("#attend14_AttendImage").val(v14.replace(default_imagefolder, ''));
+	jQuery("#attend15_AttendImage").val(v15.replace(default_imagefolder, ''));
 					
 	///// SHOW/HIDE USERDATA WHEN USERINFO IS CLICKED ///// 
 	

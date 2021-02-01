@@ -12,11 +12,11 @@
     <a class="close"></a>
     <p>Lỗi</p>
 </div>}
-<div class="contenttitle2">
-    <h3>Chỉnh sửa danh sách tham dự</h3>
-</div>
-<form class="stdform" action="/Home/Attend" method="post">
 
+<form class="stdform" action="/Home/Attend" method="post">
+    <div class="contenttitle2">
+        <h3>Chỉnh sửa danh sách tham dự</h3>
+    </div>
     <p>
         <label>Chủ trì</label>
         <span class="field">
@@ -26,113 +26,240 @@
 
     </p>
     <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.host.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.host.AttendImage" class="host_AttendImage" />
+        </span>
+    </p>
+    <p>
         <label>Người tham dự 1</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend1.AttendName, new { @class = "smallinput" })
             &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend1.Ranking, new { @class = "smallinput" })
         </span>
-        
+
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend1.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend1.AttendImage" class="attend1_AttendImage" />
+        </span>
     </p>
 
     <p>
         <label>Người tham dự 2</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend2.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend2.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend2.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend2.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend2.AttendImage" class="attend2_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 3</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend3.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend3.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend3.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend3.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend3.AttendImage" class="attend3_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 4</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend4.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend4.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend4.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend4.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend4.AttendImage" class="attend4_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 5</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend5.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend5.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend5.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend5.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend5.AttendImage" class="attend5_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 6</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend6.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend6.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend6.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend6.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend6.AttendImage" class="attend6_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 7</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend7.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend7.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend7.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend7.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend7.AttendImage" class="attend7_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 8</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend8.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend8.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend8.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend8.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend8.AttendImage" class="attend8_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 9</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend9.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend9.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend9.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend9.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend9.AttendImage" class="attend9_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 10</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend10.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend10.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend10.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend10.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend10.AttendImage" class="attend10_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 11</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend11.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend11.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend11.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend11.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend11.AttendImage" class="attend11_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 12</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend12.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend12.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend12.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend12.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend12.AttendImage" class="attend12_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 13</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend13.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend13.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend13.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend13.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend13.AttendImage" class="attend13_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 14</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend14.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend14.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend14.Ranking, new { @class = "smallinput" })
+        </span>
+    </p>
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend14.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend14.AttendImage" class="attend14_AttendImage" />
+        </span>
     </p>
     <p>
         <label>Người tham dự 15</label>
         <span class="field">
             @Html.TextBoxFor(m => m.attend15.AttendName, new { @class = "smallinput" })
-                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend15.Ranking, new { @class = "smallinput" })
-            </span>
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend15.Ranking, new { @class = "smallinput" })
+        </span>
     </p>
-
+    <p>
+        <span class="field" style="min-width : 25% !important;">
+            @Html.DropDownListFor(m => m.attend15.AttendImage, Model.listImage, new { @class = "field2" })
+        </span>
+        <span>
+            <input type="hidden" value="@Model.attend15.AttendImage" class="attend15_AttendImage" />
+        </span>
+    </p>
     <p class="stdformbutton">
         <button class="submit radius2">Cập nhật</button>
 

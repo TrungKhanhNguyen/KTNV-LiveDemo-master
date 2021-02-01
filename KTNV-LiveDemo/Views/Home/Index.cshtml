@@ -62,8 +62,11 @@
                             <div class="card-body">
                                 <marquee scrollamount="3" direction="up">
                                     <div class="row item">
-                                        
-                                        <div class="col-sm-12">
+                                        <div class="col-sm-3">
+                                            <img style="margin-bottom : 10px; width : 70px; height : 70px; max-width : 80px;" src="@ViewBag.Anhnguoichutri" alt=""
+                                                 class="rounded-circle img-fluid" />
+                                        </div>
+                                        <div class="col-sm-9">
                                             <p class="mainTitle" style="margin-top : 5px;"><b> CHỦ TRÌ CUỘC HỌP:</b></p>
                                             <p class="title title2">@ViewBag.Nguoichutri</p>
                                             <p class="title" style="font-size : 17px;padding-top : 2px;font-style: italic;margin-bottom : 12px;">@ViewBag.Chucvuchutri</p>
@@ -74,12 +77,16 @@
 
                                         if (!String.IsNullOrEmpty(item.AttendName))
                                         {
-                        <div class="row item">
-                            <div class="col-sm-12">
-                                <p class="title">@item.AttendName</p>
-                                <p class="ranking">@item.Ranking</p>
-                            </div>
-                        </div>}
+                                <div class="row item">
+                                    <div class="col-sm-3">
+                                        <img style="margin-bottom : 10px; width : 70px; height : 70px; max-width : 80px;" src="@item.AttendImage" alt=""
+                                             class="rounded-circle img-fluid" />
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <p class="title">@item.AttendName</p>
+                                        <p class="ranking">@item.Ranking</p>
+                                    </div>
+                                </div>}
                                     }
 
                                 </marquee>
@@ -100,23 +107,14 @@
                                 <hr>
                                 <p class="text-center">
                                     <h4 class="text-center">
-                                        CHƯƠNG TRÌNH CUỘC HỌP
+                                        CHƯƠNG TRÌNH
                                     </h4>
                                 </p>
                             </div>
                             <div class="card-body" style="font-size : 18px;">
                                 @Html.Raw(ViewBag.Noidung)
 
-                                @*<p>- 7h30 phút: Chào cờ</p>
-                                    <p>- 7h45 phút: Tuyên bố lý do, giới thiệu đại biểu</p>
-                                    <p>- 7h45 phút: báo cáo kết quả công tác năm 2021</p>
-                                    <p>- 8h15 phút: báo cáo kiểm điểm cuối năm</p>
-                                    <p>- 8h45 phút: khen thưởng</p>
-                                    <p>- 9h15 phút: tiếp thu ý kiến chỉ đạo</p>
-                                    <p>...............</p>
-                                    <p>...............</p>
-                                    <p>...............</p>
-                                    <p>- 11h30 phút: Bế mạc</p>*@
+                              
                             </div>
                         </div>
                     </div>
@@ -137,12 +135,12 @@
                 <div class="row">
                     @foreach (var item in Model.files)
                     {
-                        if (!String.IsNullOrEmpty(item.FileName))
+                        if (!String.IsNullOrEmpty(item))
                         {
                             <div class="col-md-4">
                                 <div style="padding : 5px 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="item card">
-                                    <a style="font-size: 17px;white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;" href="@item.Url" target="_blank">@item.FileName</a>
-                                    <span style="font-size : 15px; white-space: nowrap; width: 100%; overflow: hidden;text-overflow: ellipsis; ">@item.FileDescription</span>
+                                    <a style="font-size: 17px;white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;" href="@item" target="_blank">@item.Replace("/Content/files/","")</a>
+                                    
                                 </div>
                             </div>
                         }
@@ -160,7 +158,6 @@
             <div class="card-title" style="margin-bottom : 0;font-size : 19px;background-color : #d71920">
                 <p style="margin-bottom : 0;">Website: Cục Kỹ thuật nghiệp vụ - Bộ Công an</p>
                 <p style="margin-bottom : 0;">Địa chỉ: 44 Yết Kiêu- Hoàn Kiếm - Hà Nội.</p>
-                <p style="margin-bottom : 0;"><a style="color: yellow;font-size: 17px;" href="/Home/Title" target="_blank">Copyright © @DateTime.Now.Year</a></p>
             </div>
         </div>
     </footer>
