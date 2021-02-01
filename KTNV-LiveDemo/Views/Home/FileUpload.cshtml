@@ -1,0 +1,216 @@
+﻿@model KTNV_LiveDemo.Models.Files
+@{ ViewBag.Title = "Upload file"; }
+@if (ViewBag.ShowSuccess == "true")
+{
+    <div class="notibar msgsuccess">
+        <a class="close"></a>
+        <p>Cập nhật thành công</p>
+    </div>}
+@if (ViewBag.ShowSuccess == "false")
+{
+    <div class="notibar msgerror">
+        <a class="close"></a>
+        <p>Lỗi</p>
+    </div>}
+   
+    <form class="stdform" action="/Home/FileUpload" method="post">
+        <div class="contenttitle2">
+            <h3>File đính kèm 1</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file1.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file1.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file1.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file1.Url" class="file1_Url" />
+            </span>
+        </p>
+
+
+        @**********@
+        <div class="contenttitle2">
+            <h3>File đính kèm 2</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file2.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file2.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file2.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file2.Url" class="file2_Url" />
+            </span>
+        </p>
+
+        @**********@
+        <div class="contenttitle2">
+            <h3>File đính kèm 3</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file3.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file3.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file3.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file3.Url" class="file3_Url" />
+            </span>
+        </p>
+
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 4</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file4.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file4.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file4.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file4.Url" class="file4_Url" />
+            </span>
+        </p>
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 5</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file5.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file5.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file5.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file5.Url" class="file5_Url" />
+            </span>
+        </p>
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 6</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file6.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file6.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file6.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file6.Url" class="file6_Url" />
+            </span>
+        </p>
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 7</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file7.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file7.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file7.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file7.Url" class="file7_Url" />
+            </span>
+        </p>
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 8</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file8.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file8.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file8.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file8.Url" class="file8_Url" />
+            </span>
+        </p>
+
+        <div class="contenttitle2">
+            <h3>File đính kèm 9</h3>
+        </div>
+        <p>
+            <label>Tên file</label>
+            <span class="field"> @Html.TextBoxFor(m => m.file9.FileName, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Mô tả</label>
+            <span class="field">@Html.TextBoxFor(m => m.file9.FileDescription, new { @class = "smallinput" })</span>
+        </p>
+        <p>
+            <label>Lựa chọn file</label>
+            <span class="field">
+                @Html.DropDownListFor(m => m.file9.Url, Model.fileNames)
+            </span>
+            <span>
+                <input type="hidden" value="@Model.file9.Url" class="file9_Url" />
+            </span>
+        </p>
+
+        <p class="stdformbutton">
+            <button class="submit radius2">Cập nhật</button>
+
+        </p>
+
+    </form>
+

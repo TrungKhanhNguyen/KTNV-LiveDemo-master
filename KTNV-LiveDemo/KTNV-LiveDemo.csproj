@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1ED4C16-5EAC-425D-845B-52DDCF6D52D6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTNV_LiveDemo</RootNamespace>
+    <AssemblyName>KTNV-LiveDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44395</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\anh\daita.png" />
+    <Content Include="Content\anh\tt.png" />
+    <Content Include="Content\chutri.txt" />
+    <Content Include="Content\daita.png" />
+    <Content Include="Content\danhsachthamdu.txt" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Attend.cs" />
+    <Compile Include="Models\Attends.cs" />
+    <Compile Include="Models\Files.cs" />
+    <Compile Include="Models\ThumbnailFile.cs" />
+    <Compile Include="Models\Title.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\danhsachtieude.txt" />
+    <Content Include="Content\danhsachfiledinhkem.txt" />
+    <Content Include="Content\noidung.txt" />
+    <Content Include="css\bootstrap-grid.css" />
+    <Content Include="css\bootstrap-grid.min.css" />
+    <Content Include="css\bootstrap-reboot.css" />
+    <Content Include="css\bootstrap-reboot.min.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\plugins\colorbox.css" />
+    <Content Include="css\plugins\colorpicker.css" />
+    <Content Include="css\plugins\fullcalendar.css" />
+    <Content Include="css\plugins\jquery.alerts.css" />
+    <Content Include="css\plugins\jquery.jgrowl.css" />
+    <Content Include="css\plugins\jquery.tagsinput.css" />
+    <Content Include="css\plugins\jquery.ui.autocomplete.css" />
+    <Content Include="css\plugins\jquery.ui.css" />
+    <Content Include="css\plugins\ui.spinner.css" />
+    <Content Include="css\plugins\uniform.tp.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style.default.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Roboto-Black-webfont.svg" />
+    <Content Include="fonts\Roboto-BlackItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-Bold-webfont.svg" />
+    <Content Include="fonts\Roboto-BoldCondensed-webfont.svg" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-BoldItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-Condensed-webfont.svg" />
+    <Content Include="fonts\Roboto-CondensedItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-Italic-webfont.svg" />
+    <Content Include="fonts\Roboto-Light-webfont.svg" />
+    <Content Include="fonts\Roboto-LightItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-Medium-webfont.svg" />
+    <Content Include="fonts\Roboto-MediumItalic-webfont.svg" />
+    <Content Include="fonts\Roboto-Regular-webfont.svg" />
+    <Content Include="fonts\Roboto-Thin-webfont.svg" />
+    <Content Include="fonts\Roboto-ThinItalic-webfont.svg" />
+    <Content Include="fonts\roboto.css" />
+    <Content Include="Global.asax" />
+    <Content Include="images\200x200.png" />
+    <Content Include="images\accordinarrow.png" />
+    <Content Include="images\addfolder.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\bg-head.png" />
+    <Content Include="images\blacktrans.png" />
+    <Content Include="images\bluetrans.png" />
+    <Content Include="images\btngrad.png" />
+    <Content Include="images\buttons.png" />
+    <Content Include="images\calarrow.png" />
+    <Content Include="images\chat.png" />
+    <Content Include="images\close.png" />
+    <Content Include="images\colorbox\controls.png" />
+    <Content Include="images\colorbox\loading.gif" />
+    <Content Include="images\colorpicker\colorpicker_background.png" />
+    <Content Include="images\colorpicker\colorpicker_hex.png" />
+    <Content Include="images\colorpicker\colorpicker_hsb_b.png" />
+    <Content Include="images\colorpicker\colorpicker_hsb_h.png" />
+    <Content Include="images\colorpicker\colorpicker_hsb_s.png" />
+    <Content Include="images\colorpicker\colorpicker_indic.gif" />
+    <Content Include="images\colorpicker\colorpicker_overlay.png" />
+    <Content Include="images\colorpicker\colorpicker_rgb_b.png" />
+    <Content Include="images\colorpicker\colorpicker_rgb_g.png" />
+    <Content Include="images\colorpicker\colorpicker_rgb_r.png" />
+    <Content Include="images\colorpicker\colorpicker_select.gif" />
+    <Content Include="images\colorpicker\colorpicker_submit.png" />
+    <Content Include="images\default\arrow-active.png" />
+    <Content Include="images\default\bghover.png" />
+    <Content Include="images\default\headerbg.png" />
+    <Content Include="images\default\icons_sprite.png" />
+    <Content Include="images\default\icons_sprite2.png" />
+    <Content Include="images\default\menuarrow.png" />
+    <Content Include="images\default\noise.white.png" />
+    <Content Include="images\default\notibg.png" />
+    <Content Include="images\default\searchbutton.png" />
+    <Content Include="images\default\searchcancel.png" />
+    <Content Include="images\default\topheaderbg.png" />
+    <Content Include="images\default\userinfoarrow.png" />
+    <Content Include="images\icons\64\analytics.png" />
+    <Content Include="images\icons\64\events.png" />
+    <Content Include="images\icons\64\images.png" />
+    <Content Include="images\icons\64\settings.png" />
+    <Content Include="images\icons\64\users.png" />
+    <Content Include="images\icons\attachment.png" />
+    <Content Include="images\icons\bar.png" />
+    <Content Include="images\icons\blogperfume\Advertisment\advertisment-32.png" />
+    <Content Include="images\icons\calendar.png" />
+    <Content Include="images\icons\call.png" />
+    <Content Include="images\icons\chart.white.png" />
+    <Content Include="images\icons\comment.png" />
+    <Content Include="images\icons\flatscreen.white.png" />
+    <Content Include="images\icons\info.png" />
+    <Content Include="images\icons\mail.png" />
+    <Content Include="images\icons\message.white.png" />
+    <Content Include="images\icons\password.png" />
+    <Content Include="images\icons\pencil.white.png" />
+    <Content Include="images\icons\settings.png" />
+    <Content Include="images\icons\speech.white.png" />
+    <Content Include="images\icons\sprites.png" />
+    <Content Include="images\icons\sprites.white.png" />
+    <Content Include="images\icons\star.png" />
+    <Content Include="images\icons\unstar.png" />
+    <Content Include="images\icons\username.png" />
+    <Content Include="images\icons\users.png" />
+    <Content Include="images\kozers\thumb\0.jpg" />
+    <Content Include="images\kozers\thumb\1.jpg" />
+    <Content Include="images\kozers\thumb\2.jpg" />
+    <Content Include="images\kozers\thumb\3.jpg" />
+    <Content Include="images\kozers\thumb\4.jpg" />
+    <Content Include="images\kozers\thumb\5.jpg" />
+    <Content Include="images\kozers\thumb\6.jpg" />
+    <Content Include="images\kozers\thumb\7.jpg" />
+    <Content Include="images\kozers\thumb\8.jpg" />
+    <Content Include="images\line.ccc.png" />
+    <Content Include="images\line.dashed.png" />
+    <Content Include="images\list.png" />
+    <Content Include="images\loaders\loader1.gif" />
+    <Content Include="images\loaders\loader10.gif" />
+    <Content Include="images\loaders\loader2.gif" />
+    <Content Include="images\loaders\loader3.gif" />
+    <Content Include="images\loaders\loader4.gif" />
+    <Content Include="images\loaders\loader5.gif" />
+    <Content Include="images\loaders\loader6.gif" />
+    <Content Include="images\loaders\loader7.gif" />
+    <Content Include="images\loaders\loader8.gif" />
+    <Content Include="images\loaders\loader9.gif" />
+    <Content Include="images\logo-cuc.3.jpg" />
+    <Content Include="images\logo-cuc.jpg" />
+    <Content Include="images\logo-cuc2.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\menucollapsed.png" />
+    <Content Include="images\next.png" />
+    <Content Include="images\notifications.png" />
+    <Content Include="images\patternbg.png" />
+    <Content Include="images\prev.png" />
+    <Content Include="images\preview.png" />
+    <Content Include="images\preview\blog1.png" />
+    <Content Include="images\preview\blog2.png" />
+    <Content Include="images\preview\blogview.png" />
+    <Content Include="images\preview\image1.png" />
+    <Content Include="images\preview\image2.png" />
+    <Content Include="images\preview\image3.png" />
+    <Content Include="images\preview\image4.png" />
+    <Content Include="images\preview\image5.png" />
+    <Content Include="images\preview\image6.png" />
+    <Content Include="images\preview\portfolio1.png" />
+    <Content Include="images\preview\portfolio2.png" />
+    <Content Include="images\preview\preview1.png" />
+    <Content Include="images\preview\preview1a.png" />
+    <Content Include="images\preview\preview2.png" />
+    <Content Include="images\preview\preview2a.png" />
+    <Content Include="images\preview\themepixels1.jpg" />
+    <Content Include="images\progress.png" />
+    <Content Include="images\quote.png" />
+    <Content Include="images\quote2.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\selectall.png" />
+    <Content Include="images\separator.png" />
+    <Content Include="images\sliderhor.png" />
+    <Content Include="images\sliderver.png" />
+    <Content Include="images\sort_asc.png" />
+    <Content Include="images\sort_both.png" />
+    <Content Include="images\sort_desc.png" />
+    <Content Include="images\spinner.png" />
+    <Content Include="images\stepline.png" />
+    <Content Include="images\steps.png" />
+    <Content Include="images\thead.png" />
+    <Content Include="images\thumbs\audio.png" />
+    <Content Include="images\thumbs\avatar.png" />
+    <Content Include="images\thumbs\avatar1.png" />
+    <Content Include="images\thumbs\avatar10.png" />
+    <Content Include="images\thumbs\avatar11.png" />
+    <Content Include="images\thumbs\avatar14.png" />
+    <Content Include="images\thumbs\avatar2.png" />
+    <Content Include="images\thumbs\avatar3.png" />
+    <Content Include="images\thumbs\avatar4.png" />
+    <Content Include="images\thumbs\avatar5.png" />
+    <Content Include="images\thumbs\avatar6.png" />
+    <Content Include="images\thumbs\avatar7.png" />
+    <Content Include="images\thumbs\avatar8.png" />
+    <Content Include="images\thumbs\avatar9.png" />
+    <Content Include="images\thumbs\avatarbig.png" />
+    <Content Include="images\thumbs\doc.png" />
+    <Content Include="images\thumbs\image1.png" />
+    <Content Include="images\thumbs\image2.png" />
+    <Content Include="images\thumbs\image3.png" />
+    <Content Include="images\thumbs\image4.png" />
+    <Content Include="images\thumbs\image5.png" />
+    <Content Include="images\thumbs\image6.png" />
+    <Content Include="images\thumbs\video.png" />
+    <Content Include="images\titlebg.png" />
+    <Content Include="images\trash.png" />
+    <Content Include="images\trong-dong-nen.jpg" />
+    <Content Include="images\trong-dong-vang.jpg" />
+    <Content Include="images\uniform\bg-input-focus.png" />
+    <Content Include="images\uniform\bg-input.png" />
+    <Content Include="images\uniform\sprite.png" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.bundle.min.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\custom\blog.js" />
+    <Content Include="js\custom\calendar.js" />
+    <Content Include="js\custom\charts.js" />
+    <Content Include="js\custom\dashboard.js" />
+    <Content Include="js\custom\editor.js" />
+    <Content Include="js\custom\elements.js" />
+    <Content Include="js\custom\filemanager.js" />
+    <Content Include="js\custom\forms.js" />
+    <Content Include="js\custom\general.js" />
+    <Content Include="js\custom\index.js" />
+    <Content Include="js\custom\messages.js" />
+    <Content Include="js\custom\newsfeed.js" />
+    <Content Include="js\custom\productlist.js" />
+    <Content Include="js\custom\profile.js" />
+    <Content Include="js\custom\support.js" />
+    <Content Include="js\custom\tables.js" />
+    <Content Include="js\custom\widgets.js" />
+    <Content Include="js\plugins\charCount.js" />
+    <Content Include="js\plugins\colorpicker.js" />
+    <Content Include="js\plugins\fullcalendar.min.js" />
+    <Content Include="js\plugins\jquery-1.5.2.min.js" />
+    <Content Include="js\plugins\jquery-1.7.min.js" />
+    <Content Include="js\plugins\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="js\plugins\jquery.alerts.js" />
+    <Content Include="js\plugins\jquery.autogrow-textarea.js" />
+    <Content Include="js\plugins\jquery.bxSlider.min.js" />
+    <Content Include="js\plugins\jquery.colorbox-min.js" />
+    <Content Include="js\plugins\jquery.cookie.js" />
+    <Content Include="js\plugins\jquery.dataTables.min.js" />
+    <Content Include="js\plugins\jquery.flot.min.js" />
+    <Content Include="js\plugins\jquery.flot.pie.js" />
+    <Content Include="js\plugins\jquery.flot.resize.min.js" />
+    <Content Include="js\plugins\jquery.jgrowl.js" />
+    <Content Include="js\plugins\jquery.slimscroll.js" />
+    <Content Include="js\plugins\jquery.smartWizard-2.0.min.js" />
+    <Content Include="js\plugins\jquery.tagsinput.min.js" />
+    <Content Include="js\plugins\jquery.uniform.min.js" />
+    <Content Include="js\plugins\jquery.validate.min.js" />
+    <Content Include="js\plugins\tinymce\jquery.tinymce.js" />
+    <Content Include="js\plugins\ui.spinner.min.js" />
+    <Compile Include="Models\GeneralModel.cs" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\files\test.docx" />
+    <Content Include="Content\files\test.pdf" />
+    <Content Include="css\bootstrap-grid.css.map" />
+    <Content Include="css\bootstrap-grid.min.css.map" />
+    <Content Include="css\bootstrap-reboot.css.map" />
+    <Content Include="css\bootstrap-reboot.min.css.map" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="js\bootstrap.bundle.js.map" />
+    <Content Include="js\bootstrap.bundle.min.js.map" />
+    <Content Include="js\bootstrap.js.map" />
+    <Content Include="js\bootstrap.min.js.map" />
+    <Content Include="fonts\Roboto-Black-webfont.eot" />
+    <Content Include="fonts\Roboto-Black-webfont.ttf" />
+    <Content Include="fonts\Roboto-Black-webfont.woff" />
+    <Content Include="fonts\Roboto-Black-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-BlackItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-BlackItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-BlackItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-BlackItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Bold-webfont.eot" />
+    <Content Include="fonts\Roboto-Bold-webfont.ttf" />
+    <Content Include="fonts\Roboto-Bold-webfont.woff" />
+    <Content Include="fonts\Roboto-Bold-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-BoldCondensed-webfont.eot" />
+    <Content Include="fonts\Roboto-BoldCondensed-webfont.ttf" />
+    <Content Include="fonts\Roboto-BoldCondensed-webfont.woff" />
+    <Content Include="fonts\Roboto-BoldCondensed-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-BoldCondensedItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-BoldItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-BoldItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-BoldItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-BoldItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Condensed-webfont.eot" />
+    <Content Include="fonts\Roboto-Condensed-webfont.ttf" />
+    <Content Include="fonts\Roboto-Condensed-webfont.woff" />
+    <Content Include="fonts\Roboto-Condensed-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-CondensedItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-CondensedItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-CondensedItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-CondensedItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Italic-webfont.eot" />
+    <Content Include="fonts\Roboto-Italic-webfont.ttf" />
+    <Content Include="fonts\Roboto-Italic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Light-webfont.eot" />
+    <Content Include="fonts\Roboto-Light-webfont.ttf" />
+    <Content Include="fonts\Roboto-Light-webfont.woff" />
+    <Content Include="fonts\Roboto-Light-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-LightItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-LightItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-LightItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-LightItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Medium-webfont.eot" />
+    <Content Include="fonts\Roboto-Medium-webfont.ttf" />
+    <Content Include="fonts\Roboto-Medium-webfont.woff" />
+    <Content Include="fonts\Roboto-Medium-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-MediumItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-MediumItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-MediumItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-MediumItalic-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Regular-webfont.eot" />
+    <Content Include="fonts\Roboto-Regular-webfont.ttf" />
+    <Content Include="fonts\Roboto-Regular-webfont.woff" />
+    <Content Include="fonts\Roboto-Regular-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-Thin-webfont.eot" />
+    <Content Include="fonts\Roboto-Thin-webfont.ttf" />
+    <Content Include="fonts\Roboto-Thin-webfont.woff" />
+    <Content Include="fonts\Roboto-Thin-webfontd41d.eot" />
+    <Content Include="fonts\Roboto-ThinItalic-webfont.eot" />
+    <Content Include="fonts\Roboto-ThinItalic-webfont.ttf" />
+    <Content Include="fonts\Roboto-ThinItalic-webfont.woff" />
+    <Content Include="fonts\Roboto-ThinItalic-webfontd41d.eot" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Themes\adapters\jquery.js" />
+    <Content Include="Themes\build-config.js" />
+    <Content Include="Themes\ckeditor.js" />
+    <Content Include="Themes\config.js" />
+    <Content Include="Themes\contents.css" />
+    <Content Include="Themes\lang\af.js" />
+    <Content Include="Themes\lang\ar.js" />
+    <Content Include="Themes\lang\az.js" />
+    <Content Include="Themes\lang\bg.js" />
+    <Content Include="Themes\lang\bn.js" />
+    <Content Include="Themes\lang\bs.js" />
+    <Content Include="Themes\lang\ca.js" />
+    <Content Include="Themes\lang\cs.js" />
+    <Content Include="Themes\lang\cy.js" />
+    <Content Include="Themes\lang\da.js" />
+    <Content Include="Themes\lang\de-ch.js" />
+    <Content Include="Themes\lang\de.js" />
+    <Content Include="Themes\lang\el.js" />
+    <Content Include="Themes\lang\en-au.js" />
+    <Content Include="Themes\lang\en-ca.js" />
+    <Content Include="Themes\lang\en-gb.js" />
+    <Content Include="Themes\lang\en.js" />
+    <Content Include="Themes\lang\eo.js" />
+    <Content Include="Themes\lang\es-mx.js" />
+    <Content Include="Themes\lang\es.js" />
+    <Content Include="Themes\lang\et.js" />
+    <Content Include="Themes\lang\eu.js" />
+    <Content Include="Themes\lang\fa.js" />
+    <Content Include="Themes\lang\fi.js" />
+    <Content Include="Themes\lang\fo.js" />
+    <Content Include="Themes\lang\fr-ca.js" />
+    <Content Include="Themes\lang\fr.js" />
+    <Content Include="Themes\lang\gl.js" />
+    <Content Include="Themes\lang\gu.js" />
+    <Content Include="Themes\lang\he.js" />
+    <Content Include="Themes\lang\hi.js" />
+    <Content Include="Themes\lang\hr.js" />
+    <Content Include="Themes\lang\hu.js" />
+    <Content Include="Themes\lang\id.js" />
+    <Content Include="Themes\lang\is.js" />
+    <Content Include="Themes\lang\it.js" />
+    <Content Include="Themes\lang\ja.js" />
+    <Content Include="Themes\lang\ka.js" />
+    <Content Include="Themes\lang\km.js" />
+    <Content Include="Themes\lang\ko.js" />
+    <Content Include="Themes\lang\ku.js" />
+    <Content Include="Themes\lang\lt.js" />
+    <Content Include="Themes\lang\lv.js" />
+    <Content Include="Themes\lang\mk.js" />
+    <Content Include="Themes\lang\mn.js" />
+    <Content Include="Themes\lang\ms.js" />
+    <Content Include="Themes\lang\nb.js" />
+    <Content Include="Themes\lang\nl.js" />
+    <Content Include="Themes\lang\no.js" />
+    <Content Include="Themes\lang\oc.js" />
+    <Content Include="Themes\lang\pl.js" />
+    <Content Include="Themes\lang\pt-br.js" />
+    <Content Include="Themes\lang\pt.js" />
+    <Content Include="Themes\lang\ro.js" />
+    <Content Include="Themes\lang\ru.js" />
+    <Content Include="Themes\lang\si.js" />
+    <Content Include="Themes\lang\sk.js" />
+    <Content Include="Themes\lang\sl.js" />
+    <Content Include="Themes\lang\sq.js" />
+    <Content Include="Themes\lang\sr-latn.js" />
+    <Content Include="Themes\lang\sr.js" />
+    <Content Include="Themes\lang\sv.js" />
+    <Content Include="Themes\lang\th.js" />
+    <Content Include="Themes\lang\tr.js" />
+    <Content Include="Themes\lang\tt.js" />
+    <Content Include="Themes\lang\ug.js" />
+    <Content Include="Themes\lang\uk.js" />
+    <Content Include="Themes\lang\vi.js" />
+    <Content Include="Themes\lang\zh-cn.js" />
+    <Content Include="Themes\lang\zh.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\af.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ar.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\az.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\bg.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ca.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\cs.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\cy.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\da.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\de-ch.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\de.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\el.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\en-au.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\en-gb.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\en.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\eo.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\es-mx.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\es.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\et.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\eu.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\fa.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\fi.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\fo.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\fr-ca.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\fr.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\gl.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\gu.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\he.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\hi.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\hr.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\hu.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\id.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\it.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ja.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\km.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ko.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ku.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\lt.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\lv.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\mk.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\mn.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\nb.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\nl.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\no.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\oc.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\pl.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\pt-br.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\pt.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ro.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ru.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\si.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sk.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sl.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sq.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sr-latn.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sr.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\sv.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\th.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\tr.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\tt.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\ug.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\uk.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\vi.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\zh-cn.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\zh.js" />
+    <Content Include="Themes\plugins\a11yhelp\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Themes\plugins\about\dialogs\about.js" />
+    <Content Include="Themes\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
+    <Content Include="Themes\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="Themes\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="Themes\plugins\dialog\dialogDefinition.js" />
+    <Content Include="Themes\plugins\dialog\styles\dialog.css" />
+    <Content Include="Themes\plugins\icons.png" />
+    <Content Include="Themes\plugins\icons_hidpi.png" />
+    <Content Include="Themes\plugins\image\dialogs\image.js" />
+    <Content Include="Themes\plugins\image\images\noimage.png" />
+    <Content Include="Themes\plugins\link\dialogs\anchor.js" />
+    <Content Include="Themes\plugins\link\dialogs\link.js" />
+    <Content Include="Themes\plugins\link\images\anchor.png" />
+    <Content Include="Themes\plugins\link\images\hidpi\anchor.png" />
+    <Content Include="Themes\plugins\magicline\images\hidpi\icon-rtl.png" />
+    <Content Include="Themes\plugins\magicline\images\hidpi\icon.png" />
+    <Content Include="Themes\plugins\magicline\images\icon-rtl.png" />
+    <Content Include="Themes\plugins\magicline\images\icon.png" />
+    <Content Include="Themes\plugins\pastefromgdocs\filter\default.js" />
+    <Content Include="Themes\plugins\pastefromlibreoffice\filter\default.js" />
+    <Content Include="Themes\plugins\pastefromword\filter\default.js" />
+    <Content Include="Themes\plugins\pastetools\filter\common.js" />
+    <Content Include="Themes\plugins\pastetools\filter\image.js" />
+    <Content Include="Themes\plugins\scayt\dialogs\dialog.css" />
+    <Content Include="Themes\plugins\scayt\dialogs\options.js" />
+    <Content Include="Themes\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="Themes\plugins\scayt\skins\moono-lisa\scayt.css" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\af.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ar.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\az.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\bg.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ca.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\cs.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\cy.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\da.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\de-ch.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\de.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\el.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\en-au.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\en-ca.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\en-gb.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\en.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\eo.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\es-mx.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\es.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\et.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\eu.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\fa.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\fi.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\fr-ca.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\fr.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\gl.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\he.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\hr.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\hu.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\id.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\it.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ja.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\km.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ko.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ku.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\lt.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\lv.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\nb.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\nl.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\no.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\oc.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\pl.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\pt-br.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\pt.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ro.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ru.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\si.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sk.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sl.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sq.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sr-latn.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sr.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\sv.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\th.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\tr.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\tt.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\ug.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\uk.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\vi.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\zh-cn.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\zh.js" />
+    <Content Include="Themes\plugins\specialchar\dialogs\lang\_translationstatus.txt" />
+    <Content Include="Themes\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="Themes\plugins\tableselection\styles\tableselection.css" />
+    <Content Include="Themes\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="Themes\plugins\table\dialogs\table.js" />
+    <Content Include="Themes\plugins\widget\images\handle.png" />
+    <Content Include="Themes\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="Themes\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="Themes\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="Themes\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="Themes\plugins\wsc\dialogs\wsc_ie.js" />
+    <Content Include="Themes\plugins\wsc\icons\hidpi\spellchecker.png" />
+    <Content Include="Themes\plugins\wsc\icons\spellchecker.png" />
+    <Content Include="Themes\plugins\wsc\lang\af.js" />
+    <Content Include="Themes\plugins\wsc\lang\ar.js" />
+    <Content Include="Themes\plugins\wsc\lang\bg.js" />
+    <Content Include="Themes\plugins\wsc\lang\bn.js" />
+    <Content Include="Themes\plugins\wsc\lang\bs.js" />
+    <Content Include="Themes\plugins\wsc\lang\ca.js" />
+    <Content Include="Themes\plugins\wsc\lang\cs.js" />
+    <Content Include="Themes\plugins\wsc\lang\cy.js" />
+    <Content Include="Themes\plugins\wsc\lang\da.js" />
+    <Content Include="Themes\plugins\wsc\lang\de.js" />
+    <Content Include="Themes\plugins\wsc\lang\el.js" />
+    <Content Include="Themes\plugins\wsc\lang\en-au.js" />
+    <Content Include="Themes\plugins\wsc\lang\en-ca.js" />
+    <Content Include="Themes\plugins\wsc\lang\en-gb.js" />
+    <Content Include="Themes\plugins\wsc\lang\en.js" />
+    <Content Include="Themes\plugins\wsc\lang\eo.js" />
+    <Content Include="Themes\plugins\wsc\lang\es.js" />
+    <Content Include="Themes\plugins\wsc\lang\et.js" />
+    <Content Include="Themes\plugins\wsc\lang\eu.js" />
+    <Content Include="Themes\plugins\wsc\lang\fa.js" />
+    <Content Include="Themes\plugins\wsc\lang\fi.js" />
+    <Content Include="Themes\plugins\wsc\lang\fo.js" />
+    <Content Include="Themes\plugins\wsc\lang\fr-ca.js" />
+    <Content Include="Themes\plugins\wsc\lang\fr.js" />
+    <Content Include="Themes\plugins\wsc\lang\gl.js" />
+    <Content Include="Themes\plugins\wsc\lang\gu.js" />
+    <Content Include="Themes\plugins\wsc\lang\he.js" />
+    <Content Include="Themes\plugins\wsc\lang\hi.js" />
+    <Content Include="Themes\plugins\wsc\lang\hr.js" />
+    <Content Include="Themes\plugins\wsc\lang\hu.js" />
+    <Content Include="Themes\plugins\wsc\lang\is.js" />
+    <Content Include="Themes\plugins\wsc\lang\it.js" />
+    <Content Include="Themes\plugins\wsc\lang\ja.js" />
+    <Content Include="Themes\plugins\wsc\lang\ka.js" />
+    <Content Include="Themes\plugins\wsc\lang\km.js" />
+    <Content Include="Themes\plugins\wsc\lang\ko.js" />
+    <Content Include="Themes\plugins\wsc\lang\ku.js" />
+    <Content Include="Themes\plugins\wsc\lang\lt.js" />
+    <Content Include="Themes\plugins\wsc\lang\lv.js" />
+    <Content Include="Themes\plugins\wsc\lang\mk.js" />
+    <Content Include="Themes\plugins\wsc\lang\mn.js" />
+    <Content Include="Themes\plugins\wsc\lang\ms.js" />
+    <Content Include="Themes\plugins\wsc\lang\nb.js" />
+    <Content Include="Themes\plugins\wsc\lang\nl.js" />
+    <Content Include="Themes\plugins\wsc\lang\no.js" />
+    <Content Include="Themes\plugins\wsc\lang\pl.js" />
+    <Content Include="Themes\plugins\wsc\lang\pt-br.js" />
+    <Content Include="Themes\plugins\wsc\lang\pt.js" />
+    <Content Include="Themes\plugins\wsc\lang\ro.js" />
+    <Content Include="Themes\plugins\wsc\lang\ru.js" />
+    <Content Include="Themes\plugins\wsc\lang\sk.js" />
+    <Content Include="Themes\plugins\wsc\lang\sl.js" />
+    <Content Include="Themes\plugins\wsc\lang\sr-latn.js" />
+    <Content Include="Themes\plugins\wsc\lang\sr.js" />
+    <Content Include="Themes\plugins\wsc\lang\sv.js" />
+    <Content Include="Themes\plugins\wsc\lang\th.js" />
+    <Content Include="Themes\plugins\wsc\lang\tr.js" />
+    <Content Include="Themes\plugins\wsc\lang\ug.js" />
+    <Content Include="Themes\plugins\wsc\lang\uk.js" />
+    <Content Include="Themes\plugins\wsc\lang\vi.js" />
+    <Content Include="Themes\plugins\wsc\lang\zh-cn.js" />
+    <Content Include="Themes\plugins\wsc\lang\zh.js" />
+    <Content Include="Themes\plugins\wsc\plugin.js" />
+    <Content Include="Themes\plugins\wsc\skins\moono-lisa\wsc.css" />
+    <Content Include="Themes\samples\css\samples.css" />
+    <Content Include="Themes\samples\img\github-top.png" />
+    <Content Include="Themes\samples\img\header-bg.png" />
+    <Content Include="Themes\samples\img\header-separator.png" />
+    <Content Include="Themes\samples\img\logo.png" />
+    <Content Include="Themes\samples\img\logo.svg" />
+    <Content Include="Themes\samples\img\navigation-tip.png" />
+    <Content Include="Themes\samples\index.html" />
+    <Content Include="Themes\samples\js\sample.js" />
+    <Content Include="Themes\samples\js\sf.js" />
+    <Content Include="Themes\samples\old\ajax.html" />
+    <Content Include="Themes\samples\old\api.html" />
+    <Content Include="Themes\samples\old\appendto.html" />
+    <Content Include="Themes\samples\old\assets\inlineall\logo.png" />
+    <Content Include="Themes\samples\old\assets\outputxhtml\outputxhtml.css" />
+    <Content Include="Themes\samples\old\assets\posteddata.php" />
+    <Content Include="Themes\samples\old\assets\sample.jpg" />
+    <Content Include="Themes\samples\old\assets\uilanguages\languages.js" />
+    <Content Include="Themes\samples\old\datafiltering.html" />
+    <Content Include="Themes\samples\old\dialog\assets\my_dialog.js" />
+    <Content Include="Themes\samples\old\dialog\dialog.html" />
+    <Content Include="Themes\samples\old\divreplace.html" />
+    <Content Include="Themes\samples\old\enterkey\enterkey.html" />
+    <Content Include="Themes\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
+    <Content Include="Themes\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
+    <Content Include="Themes\samples\old\htmlwriter\outputforflash.html" />
+    <Content Include="Themes\samples\old\htmlwriter\outputhtml.html" />
+    <Content Include="Themes\samples\old\index.html" />
+    <Content Include="Themes\samples\old\inlineall.html" />
+    <Content Include="Themes\samples\old\inlinebycode.html" />
+    <Content Include="Themes\samples\old\inlinetextarea.html" />
+    <Content Include="Themes\samples\old\jquery.html" />
+    <Content Include="Themes\samples\old\magicline\magicline.html" />
+    <Content Include="Themes\samples\old\readonly.html" />
+    <Content Include="Themes\samples\old\replacebyclass.html" />
+    <Content Include="Themes\samples\old\replacebycode.html" />
+    <Content Include="Themes\samples\old\sample.css" />
+    <Content Include="Themes\samples\old\sample.js" />
+    <Content Include="Themes\samples\old\sample_posteddata.php" />
+    <Content Include="Themes\samples\old\tabindex.html" />
+    <Content Include="Themes\samples\old\toolbar\toolbar.html" />
+    <Content Include="Themes\samples\old\uicolor.html" />
+    <Content Include="Themes\samples\old\uilanguages.html" />
+    <Content Include="Themes\samples\old\wysiwygarea\fullpage.html" />
+    <Content Include="Themes\samples\old\xhtmlstyle.html" />
+    <Content Include="Themes\samples\toolbarconfigurator\css\fontello.css" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\fontello.svg" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\LICENSE.txt" />
+    <Content Include="Themes\samples\toolbarconfigurator\index.html" />
+    <Content Include="Themes\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\js\toolbarmodifier.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\neo.css" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
+    <Content Include="Themes\skins\moono-lisa\dialog.css" />
+    <Content Include="Themes\skins\moono-lisa\dialog_ie.css" />
+    <Content Include="Themes\skins\moono-lisa\dialog_ie8.css" />
+    <Content Include="Themes\skins\moono-lisa\dialog_iequirks.css" />
+    <Content Include="Themes\skins\moono-lisa\editor.css" />
+    <Content Include="Themes\skins\moono-lisa\editor_gecko.css" />
+    <Content Include="Themes\skins\moono-lisa\editor_ie.css" />
+    <Content Include="Themes\skins\moono-lisa\editor_ie8.css" />
+    <Content Include="Themes\skins\moono-lisa\editor_iequirks.css" />
+    <Content Include="Themes\skins\moono-lisa\icons.png" />
+    <Content Include="Themes\skins\moono-lisa\icons_hidpi.png" />
+    <Content Include="Themes\skins\moono-lisa\images\arrow.png" />
+    <Content Include="Themes\skins\moono-lisa\images\close.png" />
+    <Content Include="Themes\skins\moono-lisa\images\hidpi\close.png" />
+    <Content Include="Themes\skins\moono-lisa\images\hidpi\lock-open.png" />
+    <Content Include="Themes\skins\moono-lisa\images\hidpi\lock.png" />
+    <Content Include="Themes\skins\moono-lisa\images\hidpi\refresh.png" />
+    <Content Include="Themes\skins\moono-lisa\images\lock-open.png" />
+    <Content Include="Themes\skins\moono-lisa\images\lock.png" />
+    <Content Include="Themes\skins\moono-lisa\images\refresh.png" />
+    <Content Include="Themes\skins\moono-lisa\images\spinner.gif" />
+    <Content Include="Themes\styles.js" />
+    <Content Include="Themes\vendor\promise.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Shared\MainLayout.cshtml" />
+    <Content Include="Views\Home\Title.cshtml" />
+    <Content Include="Themes\CHANGES.md" />
+    <Content Include="Themes\LICENSE.md" />
+    <Content Include="Themes\plugins\scayt\CHANGELOG.md" />
+    <Content Include="Themes\plugins\scayt\LICENSE.md" />
+    <Content Include="Themes\plugins\scayt\README.md" />
+    <Content Include="Themes\plugins\wsc\LICENSE.md" />
+    <Content Include="Themes\plugins\wsc\README.md" />
+    <Content Include="Themes\README.md" />
+    <Content Include="Themes\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\config.json" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\fontello.eot" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\fontello.ttf" />
+    <Content Include="Themes\samples\toolbarconfigurator\font\fontello.woff" />
+    <Content Include="Themes\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
+    <Content Include="Themes\skins\moono-lisa\readme.md" />
+    <Content Include="Views\Home\Attend.cshtml" />
+    <Content Include="Views\Home\FileUpload.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\" />
+    <Folder Include="images\thumb\small\" />
+    <Folder Include="images\thumb\xsmall\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53132</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44395/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

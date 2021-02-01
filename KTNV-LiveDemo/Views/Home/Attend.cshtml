@@ -1,0 +1,143 @@
+﻿@model KTNV_LiveDemo.Models.Attends
+@{ ViewBag.Title = "Danh sách tham dự"; }
+@if (ViewBag.ShowSuccess == "true")
+{
+<div class="notibar msgsuccess">
+    <a class="close"></a>
+    <p>Cập nhật thành công</p>
+</div>}
+@if (ViewBag.ShowSuccess == "false")
+{
+<div class="notibar msgerror">
+    <a class="close"></a>
+    <p>Lỗi</p>
+</div>}
+<div class="contenttitle2">
+    <h3>Chỉnh sửa danh sách tham dự</h3>
+</div>
+<form class="stdform" action="/Home/Attend" method="post">
+
+    <p>
+        <label>Chủ trì</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.host.AttendName, new { @class = "smallinput" })
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.host.Ranking, new { @class = "smallinput" })
+        </span>
+
+    </p>
+    <p>
+        <label>Người tham dự 1</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend1.AttendName, new { @class = "smallinput" })
+            &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend1.Ranking, new { @class = "smallinput" })
+        </span>
+        
+    </p>
+
+    <p>
+        <label>Người tham dự 2</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend2.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend2.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 3</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend3.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend3.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 4</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend4.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend4.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 5</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend5.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend5.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 6</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend6.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend6.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 7</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend7.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend7.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 8</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend8.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend8.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 9</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend9.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend9.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 10</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend10.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend10.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 11</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend11.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend11.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 12</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend12.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend12.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 13</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend13.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend13.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 14</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend14.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend14.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+    <p>
+        <label>Người tham dự 15</label>
+        <span class="field">
+            @Html.TextBoxFor(m => m.attend15.AttendName, new { @class = "smallinput" })
+                &nbsp;&nbsp; Chức vụ: @Html.TextBoxFor(m => m.attend15.Ranking, new { @class = "smallinput" })
+            </span>
+    </p>
+
+    <p class="stdformbutton">
+        <button class="submit radius2">Cập nhật</button>
+
+    </p>
+
+
+</form>
+

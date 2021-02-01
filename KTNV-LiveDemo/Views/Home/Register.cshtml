@@ -1,0 +1,63 @@
+﻿@model KTNV_LiveDemo.Models.Title
+@{
+    ViewBag.Title = "Register";
+
+}
+@if (ViewBag.ShowSuccess == "true")
+{
+    <div class="notibar msgsuccess">
+        <a class="close"></a>
+        <p>This is a success message.</p>
+    </div>
+}
+<a href="#" class="btn btn_red btn_trash"><span>Xóa các file đính kèm cũ</span></a>
+<br />
+<div class="contenttitle2">
+    <h3>Thông tin tiêu đề 1</h3>
+</div>
+<form class="stdform" action="/Home/Register" method="post">
+
+    <p>
+        <label>Tên tiêu đề</label>
+        <span class="field">
+            <input type="text" name="tieude1" class="smallinput" />
+            @Html.TextBoxFor(m => m.TitleName, new { @class = "smallinput" })
+        </span>
+        <small class="desc">Small description of this field.</small>
+    </p>
+    <p>
+        <label>Nội dung</label>
+        <span class="field">
+            <input type="text" name="tieude1khoangcach" class="smallinput" />
+            @Html.TextAreaFor(x => x.TitleContent, 10, 15, null)
+            
+        </span>
+        <small class="desc">Small description of this field.</small>
+    </p>
+    <p>
+        <label>In thường/In nghiêng</label>
+        <span class="formwrapper">
+            <input type="radio" name="tieude1inthuong" value="normal" checked="checked" /> In thường &nbsp; &nbsp;
+            <input type="radio" name="tieude1inthuong" value="italic" /> In nghiêng &nbsp; &nbsp;
+
+        </span>
+    </p>
+    <p>
+        <label>In thường/In đậm</label>
+        <span class="formwrapper">
+            <input type="radio" name="tieude1indam" value="normal" checked="checked" /> In thường &nbsp; &nbsp;
+            <input type="radio" name="tieude1indam" value="bold" /> In đậm &nbsp; &nbsp;
+        </span>
+       
+    </p>
+
+    <br clear="all" /><br />
+
+    <p class="stdformbutton">
+        <button class="submit radius2">Submit Button</button>
+        <input type="reset" class="reset radius2" value="Reset Button" />
+    </p>
+
+
+</form>
+

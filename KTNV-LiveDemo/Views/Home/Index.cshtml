@@ -1,0 +1,202 @@
+﻿
+@model KTNV_LiveDemo.Models.GeneralModel
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Website Phòng họp trực tuyến</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body class="home">
+
+    <div class="container">
+        <header class="blog-header">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="float-left">
+                        <a class="blog-header-logo text-dark" href="#">
+                            <img style="height : 115px; width : auto;" src="~/images/logo-cuc2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h4><p style="margin-bottom: 3px; text-align: center;padding-top : 20px;font-weight : bold;">PHÒNG HỌP TRỰC TUYẾN</p></h4>
+                    <h4><p class="" style="text-align: center;font-weight: bold;">CỤC KỸ THUẬT NGHIỆP VỤ - BỘ CÔNG AN</p></h4>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+
+                <div class="col-md-12">
+                    <div class="float-right" style="width : 35%;text-align : right;">
+                        <h5 style="margin-bottom : 0;"><p class="title" style="font-size: 17px; color: yellow ;margin-top :15px;margin-bottom : 0;padding-top: 0px;display: inline-block;"><i>Hà Nội, @DateTime.Now.ToString("dd/MM/yyyy") <span id="time">@DateTime.Now.ToString("HH:mm:ss")</span></i></p></h5>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="card bg" style="border-top-left-radius : 0; border-top-right-radius: 0;">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card user-lists" style="background:transparent;">
+                            <div class="card-title-top"><h4><p class="text-center" style="margin-top : 9px;">THÀNH PHẦN THAM DỰ CUỘC HỌP</p> </h4></div>
+                            <div class="card-body">
+                                <marquee scrollamount="3" direction="up">
+                                    <div class="row item">
+                                        
+                                        <div class="col-sm-12">
+                                            <p class="mainTitle" style="margin-top : 5px;"><b> CHỦ TRÌ CUỘC HỌP:</b></p>
+                                            <p class="title title2">@ViewBag.Nguoichutri</p>
+                                            <p class="title" style="font-size : 17px;padding-top : 2px;font-style: italic;margin-bottom : 12px;">@ViewBag.Chucvuchutri</p>
+                                        </div>
+                                    </div>
+                                    @foreach (var item in Model.attends)
+                                    {
+
+                                        if (!String.IsNullOrEmpty(item.AttendName))
+                                        {
+                        <div class="row item">
+                            <div class="col-sm-12">
+                                <p class="title">@item.AttendName</p>
+                                <p class="ranking">@item.Ranking</p>
+                            </div>
+                        </div>}
+                                    }
+
+                                </marquee>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="card" style="background: transparent">
+                            <!-- style="background: transparent" -->
+
+                            <div class="card-title-top">
+                                <div class="text-center">
+                                    <marquee scrollamount="3" direction="left">
+                                        <h4 style="margin-bottom : 0; margin-top : 9px;text-transform: uppercase;">@ViewBag.TenHoiNghi</h4>
+                                    </marquee>
+                                </div>
+                                <hr>
+                                <p class="text-center">
+                                    <h4 class="text-center">
+                                        CHƯƠNG TRÌNH CUỘC HỌP
+                                    </h4>
+                                </p>
+                            </div>
+                            <div class="card-body" style="font-size : 18px;">
+                                @Html.Raw(ViewBag.Noidung)
+
+                                @*<p>- 7h30 phút: Chào cờ</p>
+                                    <p>- 7h45 phút: Tuyên bố lý do, giới thiệu đại biểu</p>
+                                    <p>- 7h45 phút: báo cáo kết quả công tác năm 2021</p>
+                                    <p>- 8h15 phút: báo cáo kiểm điểm cuối năm</p>
+                                    <p>- 8h45 phút: khen thưởng</p>
+                                    <p>- 9h15 phút: tiếp thu ý kiến chỉ đạo</p>
+                                    <p>...............</p>
+                                    <p>...............</p>
+                                    <p>...............</p>
+                                    <p>- 11h30 phút: Bế mạc</p>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <main role="main" class="container main">
+        <div class="card">
+            <div class="card-title-top">
+                <div class="text-center">
+                    <H4><p style="margin-top : 7px; margin-bottom : 5px;">TÀI LIỆU CUỘC HỌP</p></H4>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    @foreach (var item in Model.files)
+                    {
+                        if (!String.IsNullOrEmpty(item.FileName))
+                        {
+                            <div class="col-md-4">
+                                <div style="padding : 5px 10px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" class="item card">
+                                    <a style="font-size: 17px;white-space: nowrap;width: 100%;overflow: hidden;text-overflow: ellipsis;" href="@item.Url" target="_blank">@item.FileName</a>
+                                    <span style="font-size : 15px; white-space: nowrap; width: 100%; overflow: hidden;text-overflow: ellipsis; ">@item.FileDescription</span>
+                                </div>
+                            </div>
+                        }
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+
+        <div class="card">
+            <div class="card-title" style="margin-bottom : 0;font-size : 19px;background-color : #d71920">
+                <p style="margin-bottom : 0;">Website: Cục Kỹ thuật nghiệp vụ - Bộ Công an</p>
+                <p style="margin-bottom : 0;">Địa chỉ: 44 Yết Kiêu- Hoàn Kiếm - Hà Nội.</p>
+                <p style="margin-bottom : 0;"><a style="color: yellow;font-size: 17px;" href="/Home/Title" target="_blank">Copyright © @DateTime.Now.Year</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/plugins/jquery-1.7.min.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            function startTime() {
+                var d = new Date();
+                var h = d.getHours();
+                var m = d.getMinutes();
+                var s = d.getSeconds();
+                m = checkTime(m);
+                s = checkTime(s);
+                jQuery('#time').text(h + ":" + m + ":" + s);
+                
+            }
+
+            function checkTime(i) {
+                var j = i;
+                if (i < 10) {
+                    j = "0" + i;
+                }
+                return j;
+            }
+
+            setInterval(function () {
+                startTime();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+/* stylelint-disable selector-list-comma-newline-after */
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Regular-webfont.ttf);
+    font-weight : 400;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Bold-webfont.ttf);
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Medium-webfont.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: Roboto;
+    src: url(../fonts/Roboto-Black-webfont.ttf);
+    font-weight: 700;
+}
+body{
+    font-family : 'Times New Roman', Times, serif;
+    
+}
+
+.blog-header {
+    background: #d71920 url(../images/bg-head.png) repeat-x center top;
+    padding: 5px 10px 5px 10px;
+    color: red;
+}
+
+.blog-header-logo {
+    /*//font-family: "Playfair Display", Georgia, "Times New Roman", serif;*/
+    font-size: 2.25rem;
+}
+
+.blog-header-logo:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /*font-family: "Playfair Display", Georgia, "Times New Roman", serif;*/
+}
+
+.display-4 {
+    font-size: 2.5rem;
+}
+@media (min-width: 768px) {
+    .display-4 {
+        font-size: 3rem;
+    }
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-scroller .nav-link {
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    font-size: .875rem;
+}
+
+.card-img-right {
+    height: 100%;
+    border-radius: 0 3px 3px 0;
+}
+
+.flex-auto {
+    -ms-flex: 0 0 auto;
+    -webkit-box-flex: 0;
+    flex: 0 0 auto;
+}
+
+.h-250 { height: 250px; }
+@media (min-width: 768px) {
+    .h-md-250 { height: 250px; }
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+/*
+ * Blog name and description
+ */
+.blog-title {
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.blog-description {
+    font-size: 1.1rem;
+    color: #999;
+}
+
+@media (min-width: 40em) {
+    .blog-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Pagination */
+.blog-pagination {
+    margin-bottom: 4rem;
+}
+.blog-pagination > .btn {
+    border-radius: 2rem;
+}
+
+/*
+ * Blog posts
+ */
+.blog-post {
+    margin-bottom: 4rem;
+}
+.blog-post-title {
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+}
+.blog-post-meta {
+    margin-bottom: 1.25rem;
+    color: #999;
+}
+
+/*
+ * Footer
+ */
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: .05rem solid #e5e5e5;
+}
+.blog-footer p:last-child {
+    margin-bottom: 0;
+}
+.main{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.user-lists .card-body{
+    line-height: 50px;
+}
+.home .card-title {
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #dedede;
+    background: red;
+    color: yellow;
+}
+.main .item{
+    margin: 10px;
+    padding: 5px;
+}
+.main .item a{
+    color: green;
+}
+.bg{
+    overflow: auto;
+
+    min-height: 410px;
+    border-top: 2px solid #d71921;
+    background-image: url(../images/trong-dong-vang.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.user-lists .title {
+    color: green;
+    padding-top: 5px;
+    line-height: 20px;
+    font-size : 20px;
+    margin-bottom : 2px;
+}
+.user-lists .item{
+    margin-left: 10px;
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 10px;
+}
+.home .card-title-leader{
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    background: white;
+    color: yellow;
+}
+.home .card-title-top {
+    padding: 5px;
+    border-bottom: 1px solid #dedede;
+    background: white;
+    color: red;
+}
+.mainTitle {
+    margin-bottom: 0;
+    line-height: 20px;
+    margin-top: 14px;
+    color: green;
+    font-size : 19px;
+}
+.user-lists .title.title2 {
+    color: green;
+    padding-top: 8px !important;
+}
+.ranking{
+    color : green;
+    font-size : 17px;
+    padding-top : 0;
+    font-style : italic;
+    line-height : 22px;
+    margin-bottom : 15px;
+}

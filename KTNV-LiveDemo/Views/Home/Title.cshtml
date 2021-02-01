@@ -1,0 +1,49 @@
+﻿@model KTNV_LiveDemo.Models.Title
+@{ ViewBag.Title = "Quản lý tiêu đề"; }
+@if (ViewBag.ShowSuccess == "true")
+{
+<div class="notibar msgsuccess">
+    <a class="close"></a>
+    <p>Cập nhật thành công</p>
+</div>}
+@if (ViewBag.ShowSuccess == "false")
+{
+    <div class="notibar msgerror">
+        <a class="close"></a>
+        <p>Lỗi</p>
+    </div>
+}
+
+<div class="contenttitle2">
+    <h3>Chỉnh sửa tiêu đề, nội dung</h3>
+</div>
+<form class="stdform" action="/Home/Title" method="post">
+
+    <p>
+        <label>Tên tiêu đề</label>
+        <span class="field">
+
+            @Html.TextBoxFor(m => m.TitleName, new { @class = "smallinput" })
+        </span>
+
+    </p>
+    <p>
+        <label>Nội dung</label>
+        <span class="field">
+
+            @Html.TextAreaFor(x => x.TitleContent, 10, 15, null)
+            <script>
+                CKEDITOR.replace("TitleContent");
+            </script>
+        </span>
+    </p>
+    <br />
+
+    <p class="stdformbutton">
+        <button class="submit radius2">Cập nhật</button>
+
+    </p>
+
+
+</form>
+

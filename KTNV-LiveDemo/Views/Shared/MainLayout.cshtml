@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.title</title>
+    <link rel="stylesheet" href="~/css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="~/js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="~/js/plugins/charCount.js"></script>
+    <script type="text/javascript" src="~/js/plugins/ui.spinner.min.js"></script>
+    <script type="text/javascript" src="~/js/custom/general.js"></script>
+    <script type="text/javascript" src="~/js/custom/forms.js"></script>
+    <script type="text/javascript" src="~/js/plugins/colorpicker.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="~/js/plugins/jquery.alerts.js"></script>
+    <script type="text/javascript" src="~/js/custom/elements.js"></script>
+
+    <script type="text/javascript" src="~/Themes/ckeditor.js"></script>
+    <script>
+        
+    </script>
+</head>
+<body  style="background-color : @ViewBag.backgroundColor;">
+    <div class="bodywrapper">
+        <div class="topheader">
+            <div class="left">
+                <h1 class="logo"><a href="/Home/Index" target="_blank">KTNV.<span>A06</span></a></h1>
+                <span class="slogan">Live conferences</span>
+
+                <div class="search">
+                    <form action="#" method="post">
+                        <input type="text" name="keyword" id="keyword" value="Enter keyword(s)" />
+                        <button class="submitbutton"></button>
+                    </form>
+                </div><!--search-->
+
+                <br clear="all" />
+
+            </div><!--left-->
+
+            <div class="right">
+                <div class="notification">
+                    <a class="count" href="ajax/notifications.html"><span>9</span></a>
+                </div>
+                <div class="userinfo">
+                    <img src="images/thumbs/avatar.png" alt="" />
+                    <span>Juan Dela Cruz</span>
+                </div><!--userinfo-->
+
+                <div class="userinfodrop">
+                    <div class="avatar">
+                        <a href="#"><img src="images/thumbs/avatarbig.png" alt="" /></a>
+                        <div class="changetheme">
+                            Change theme: <br />
+                            <a class="default"></a>
+                            <a class="blueline"></a>
+                            <a class="greenline"></a>
+                            <a class="contrast"></a>
+                            <a class="custombg"></a>
+                        </div>
+                    </div><!--avatar-->
+                    <div class="userdata">
+                        <h4>Juan Dela Cruz</h4>
+                        <span class="email">youremail@yourdomain.com</span>
+                        <ul>
+                            <li><a href="editprofile.html">Edit Profile</a></li>
+                            <li><a href="accountsettings.html">Account Settings</a></li>
+                            <li><a href="help.html">Help</a></li>
+                            <li><a href="index.html">Sign Out</a></li>
+                        </ul>
+                    </div><!--userdata-->
+                </div><!--userinfodrop-->
+            </div><!--right-->
+        </div><!--topheader-->
+
+
+        <div class="header">
+            <ul class="headermenu">
+                <li><a href="/Home/Title"><span class="icon icon-pencil"></span>Các tiêu đề</a></li>
+                <li><a href="/Home/Attend"><span class="icon icon-flatscreen"></span>Danh sách tham dự</a></li>
+                <li><a href="/Home/FileUpload"><span class="icon icon-chart"></span>File đính kèm</a></li>
+            </ul>
+
+           
+
+        </div><!--header-->
+
+       
+
+        <div class="centercontent">
+
+            <!--<div class="pageheader">
+                <h1 class="pagetitle">Forms</h1>
+                <span class="pagedesc">The content below are loaded using inline data</span>
+            </div>--><!--pageheader-->
+
+            <div id="contentwrapper" class="contentwrapper">
+                <div>
+                    @RenderBody()
+                </div>
+            </div><!--contentwrapper-->
+
+        </div><!-- centercontent -->
+
+
+    </div><!--bodywrapper-->
+
+
+    
+</body>
+</html>
