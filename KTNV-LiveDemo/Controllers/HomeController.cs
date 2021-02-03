@@ -18,7 +18,7 @@ namespace KTNV_LiveDemo.Controllers
         {
             try
             {
-                var listFileName = new DirectoryInfo(Server.MapPath(default_filefolder)).GetFiles().Select(o => o.Name).ToList();
+                var listFileName = new DirectoryInfo(Server.MapPath(default_filefolder)).GetFiles().OrderBy(m=>m.Name).Select(o => o.Name).ToList();
                 //string[] lines = System.IO.File.ReadAllLines(Server.MapPath("~/Content/danhsachfiledinhkem.txt"));
                 var listFile = new List<string>();
                 if (listFileName != null && listFileName.Count > 0)

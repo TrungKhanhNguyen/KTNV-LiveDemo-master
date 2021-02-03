@@ -121,9 +121,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Content\anh\daita.png" />
+    <Content Include="Content\anh\daiuy.png" />
+    <Content Include="Content\anh\khonganh.png" />
+    <Content Include="Content\anh\thieuta.png" />
     <Content Include="Content\anh\thuongta.png" />
     <Content Include="Content\anh\trungta.png" />
-    <Content Include="Content\anh\tt.png" />
     <Content Include="Content\chutri.txt" />
     <Content Include="Content\daita.png" />
     <Content Include="Content\danhsachthamdu.txt" />
